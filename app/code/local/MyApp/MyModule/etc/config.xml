@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MyApp
+ * @package    MyApp_MyModule
+ * @author     Nicolas Bastien
+ */
+-->
+<config>
+    <modules>
+        <MyApp_MyModule>
+            <version>0.1.0</version>
+        </MyApp_MyModule>
+    </modules>
+    <global>
+    </global>
+    <frontend>
+        <routers>
+			<myapp_mymodule>
+				<use>standard</use>
+				<args>
+					<module>MyApp_MyModule</module>
+					<frontName>myapp_mymodule</frontName>
+				</args>
+			</myapp_mymodule>
+		</routers>
+    </frontend>
+</config>

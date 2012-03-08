@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category	MyApp
+ * @author      Nicolas Bastien
+ */
+-->
+<config>
+    <modules>
+        <MyApp_MyModule>
+            <active>true</active>
+            <codePool>local</codePool>
+        </MyApp_MyModule>
+    </modules>
+</config>
