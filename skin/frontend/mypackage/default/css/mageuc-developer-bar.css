@@ -1,0 +1,207 @@
+/**
+ * @category   MageUC
+ * @package    Developer
+ * @author     Nicolas Bastien
+ */
+html {
+    padding-top: 35px;
+}
+#body {
+    top: 35px !important;
+}
+/**
+ * Developer Bar 
+ */
+#mageuc-developer-bar {
+    background-color: #F7F7F7;
+    background: -moz-linear-gradient(-90deg, #E8E8E8, #CBCBCB) repeat scroll 0 0 #CBCBCB;
+    border-bottom: 1px solid #BBBBBB;
+    top: 0;
+    color: #2F2F2F;
+    font: 11px Verdana,Arial,sans-serif;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    text-align: left;
+    width: 100%;
+    z-index: 6000000;
+    color: #2F2F2F;
+}
+#mageuc-developer-bar ul {
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+}
+#mageuc-developer-bar li.first,
+#mageuc-developer-bar li.last {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #4D4D4D;
+}
+#mageuc-developer-bar li.last {
+    border-bottom: 0px;
+    float: right;
+}
+#mageuc-developer-bar li {
+    cursor: pointer;
+    height: 20px;
+    padding: 10px 30px 5px;
+    border-right: #BBBBBB 1px solid;
+    background-position: 5px 8px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    float: left;
+}
+#mageuc-developer-bar li.memory {
+    background-image: url("../img/mageuc/developer-bar/icons/16/memory.png");
+}
+#mageuc-developer-bar li.settings {
+    background-image: url("../img/mageuc/developer-bar/icons/16/php.png");
+}
+#mageuc-developer-bar-settings div h2 {
+    background-image: url("../img/mageuc/developer-bar/icons/32/php.png");
+}
+#mageuc-developer-bar li.database {
+    background-image: url("../img/mageuc/developer-bar/icons/16/database.png");
+}
+#mageuc-developer-bar-database div h2 {
+    background-image: url("../img/mageuc/developer-bar/icons/32/database.png");
+}
+#mageuc-developer-bar li.database_warning {
+    background-image: url("../img/mageuc/developer-bar/icons/16/database_warning.png");
+}
+#mageuc-developer-bar-database_warning div h2 {
+    background-image: url("../img/mageuc/developer-bar/icons/32/database_warning.png");
+}
+#mageuc-developer-bar li.application {
+    background-image: url("../img/mageuc/developer-bar/icons/16/application.png");
+}
+#mageuc-developer-bar-application div h2 {
+    background-image: url("../img/mageuc/developer-bar/icons/32/application.png");
+}
+#mageuc-developer-bar li.log {
+    background-image: url("../img/mageuc/developer-bar/icons/16/log.png");
+}
+#mageuc-developer-bar-log div h2 {
+    background-image: url("../img/mageuc/developer-bar/icons/32/log.png");
+}
+#mageuc-developer-bar li.event {
+    background-image: url("../img/mageuc/developer-bar/icons/16/event.png");
+}
+#mageuc-developer-bar-event div h2 {
+    background-image: url("../img/mageuc/developer-bar/icons/32/event.png");
+}
+#mageuc-developer-bar li.debug {
+    background-image: url("../img/mageuc/developer-bar/icons/16/debug.png");
+}
+#mageuc-developer-bar-debug div h2 {
+    background-image: url("../img/mageuc/developer-bar/icons/32/debug.png");
+}
+#mageuc-developer-bar li:hover {
+    color: #759e1a;
+    background-color: #FFF;
+}
+
+/**
+ * Developer Bar Panels
+ */
+.mageuc_developer_bar_panel {
+    position: absolute;
+    top: 35px;
+    padding: 15px 5px 5px 5px;
+    background: #EFEFEF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    z-index: 9999;
+    color: #2F2F2F;
+    width: 99%;
+}
+div.mageuc_developer_bar_panel_content h2 {
+    padding: 5px 40px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    border-bottom: #BBBBBB 1px solid;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    background-position: 3px 2px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    color: #2F2F2F;
+}
+div.mageuc_developer_bar_panel h3 {
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 5px 15px 15px 15px;
+    background-position: 0px 0px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+div.mageuc_developer_bar_panel_block {
+    padding: 10px 25px;
+    background: #FFF;
+    border: 1px solid #7F725E;
+    margin-bottom: 15px;
+    min-width: 650px;
+    margin: 0px 15px 15px 15px;
+    box-shadow: 0 0 3px #000000;
+}
+
+/**
+ * Table
+ */
+div.mageuc_developer_bar_panel table {
+    margin: 10px 0 30px;
+    width: 100%;
+    border: 1px solid #D0DBB3;
+    border-collapse: collapse;
+}
+div.mageuc_developer_bar_panel table th, 
+div.mageuc_developer_bar_panel table td {
+    font-size: 12px;
+    padding: 8px 10px;
+}
+div.mageuc_developer_bar_panel table th {
+    background-color: #F1F7E2;
+    font-weight: bold;
+}
+div.mageuc_developer_bar_panel table, 
+div.mageuc_developer_bar_panel th, 
+div.mageuc_developer_bar_panel td, 
+div.mageuc_developer_bar_panel tr {
+    border: 1px solid #D0DBB3;
+    border-collapse: collapse;
+}
+div.mageuc_developer_bar_panel caption, 
+div.mageuc_developer_bar_panel th {
+    text-align: left;
+}
+div.mageuc_developer_bar_panel td li {
+    list-style-type: disc !important;
+    list-style-position: inside;
+    float: left;
+    padding: 3px;
+    margin-right: 5px;
+    min-width: 50px;
+}
+
+/**
+ * Database query
+ */
+div.mageuc_developer_bar_panel .query_key_word {
+    color: #3B5998;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+div.mageuc_developer_bar_panel div.small-space {
+    width: 45px;
+    float: left;
+}
+div.mageuc_developer_bar_panel div.small-tab {
+    width: 5px;
+    float: left;
+}
+div.mageuc_developer_bar_panel pre {
+    font-size: 13px;
+}

@@ -1,0 +1,53 @@
+<?php
+/**
+ * @category   MageUC
+ * @author     Nicolas Bastien
+ */
+?>
+<div id="mageuc-developer-bar">
+    <ul>
+        <li class="first" onclick="MageUCDeveloperBar.showPanel('');">MageUC</li>
+        <?php foreach ($this->getPanels() as $panel) : ?>
+            <?php echo $panel->renderMenuItem(); ?>
+        <?php endforeach; ?>
+        <li class="last" onclick="MageUCDeveloperBar.hide();">x</li>
+    </ul>
+</div>
+<?php foreach ($this->getPanels() as $panel) : ?>
+    <?php echo $panel->renderContent(); ?>
+<?php endforeach; ?>
+
+<script type="text/javascript">
+var MageUCDeveloperBar = function()
+{
+    return {
+        /**
+         * Show specif panel
+         */
+        showPanel : function (idPanel) {
+            $$("div.mageuc_developer_bar_panel").each(function (e){e.hide()});
+            if ($(idPanel)) {
+                $(idPanel).show();
+            }
+        },
+        hide : function () {
+            $("mageuc-developer-bar").hide();
+            $$("div.mageuc_developer_bar_panel").each(function (e){e.hide()});
+        },
+        /**
+         * Toogle panel blocks and update icons
+         */
+        toogle : function (blockName, elt) {
+            if ($(blockName).style.display == 'none') {
+                $(blockName).style.display = '';
+                elt.removeClassName('toogle_closed');
+                elt.addClassName('toogle_opened');
+            } else {
+                $(blockName).style.display = 'none';
+                elt.removeClassName('toogle_opened');
+                elt.addClassName('toogle_closed');
+            }
+        }
+    }
+}();
+</script>
