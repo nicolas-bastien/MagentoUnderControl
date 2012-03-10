@@ -1,0 +1,93 @@
+<?php
+/**
+ * @category   MageUC
+ * @package    Developer
+ * @author     Nicolas Bastien
+ */
+?>
+<div id="mageuc-developer-bar-application" class="mageuc_developer_bar_panel" style="display: none;">
+    <div class="mageuc_developer_bar_panel_content">
+        <h2>Application</h2>
+        <div class="mageuc_developer_bar_panel_block">
+            <?php $request = Mage::app()->getRequest(); ?>
+            <h3>Request : <?php echo $this->_getItemMenuString(); ?></h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>getHttpHost</th><td><?php echo $request->getHttpHost(); ?></td>
+                        <th>isPost</th><td><?php echo var_export($request->isPost()); ?></td>
+                    </tr>
+                    <tr>
+                        <th>getRequestedActionName</th><td><?php echo $request->getRequestedActionName(); ?></td>
+                        <th>getRequestedControllerName</th><td><?php echo $request->getRequestedControllerName(); ?></td>
+                    </tr>
+                    <tr>
+                        <th>getRequestedRouteName</th><td><?php echo $request->getRequestedRouteName(); ?></td>
+                        <th>getRouteName</th><td><?php echo $request->getRouteName(); ?></td>
+                    </tr>
+                    <tr>
+                        <th>params</th><td colspan="3"><pre><?php echo var_export($request->getParams()); ?></pre></td>
+                    </tr>
+                </tbody>
+            </table>   
+        </div>
+        <div class="mageuc_developer_bar_panel_block">
+            <h3>Response</h3>
+            <?php $response = Mage::app()->getResponse(); ?>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>getHttpResponseCode</th><td><?php echo $response->getHttpResponseCode(); ?></td>
+                        <th>isRedirect</th><td><?php echo var_export($response->isRedirect()); ?></td>
+                    </tr>
+                    <?php if (count($response->getException())) : ?>
+                    <tr>
+                        <th>exception</th>
+                        <td colspan="3">
+                            <?php foreach ($response->getException() as $exception) : ?>
+                                <pre><?php echo var_export($exception); ?></pre>
+                            <?php endforeach; ?>
+                        </td>
+                    </tr>
+                    <?php endif; ?>
+                    
+                    <tr>
+                        <th>getHeaders</th>
+                        <td colspan="3">
+                            <?php foreach ($response->getHeaders() as $header) : ?>
+                                <pre><?php echo var_export($header); ?></pre>
+                            <?php endforeach; ?>
+                        </td>
+                    </tr>
+                    
+                    <?php if (count($response->getRawHeaders())) : ?>
+                    <tr>
+                        <th>getRawHeaders</th>
+                        <td colspan="3">
+                            <?php foreach ($response->getRawHeaders() as $rawHeader) : ?>
+                                <pre><?php echo var_export($rawHeader); ?></pre>
+                            <?php endforeach; ?>
+                        </td>
+                    </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="mageuc_developer_bar_panel_block">
+            <h3>Magento</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Version</th>
+                        <td><?php echo Mage::getVersion(); ?></td>
+                        <th>Base dir</th><td><?php echo Mage::getBaseDir(); ?></td>
+                    </tr>
+                    <tr>
+                        <th>Base url</th><td><?php echo Mage::getBaseUrl(); ?></td>
+                        <th>Skin</th><td><?php echo Mage::getDesign()->getSkinBaseDir(); ?></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

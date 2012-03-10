@@ -33,7 +33,11 @@ class MageUC_Developer_Bar
     public function  __construct()
     {
         //Load Bar panel
-        $this->_panels = array();
+        $this->_panels = array(
+            'application' => new MageUC_Developer_Bar_Panel_Application(),
+            'memory'  => new MageUC_Developer_Bar_Panel_Memory(),
+            'setting' => new MageUC_Developer_Bar_Panel_Settings()
+        );
     }
 
     /**

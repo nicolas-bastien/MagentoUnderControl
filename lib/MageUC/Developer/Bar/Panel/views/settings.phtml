@@ -1,0 +1,54 @@
+<?php
+/**
+ * @category   MageUC
+ * @package    Developer
+ * @author     Nicolas Bastien
+ */
+?>
+<div id="mageuc-developer-bar-settings" class="mageuc_developer_bar_panel" style="display: none;">
+    <div class="mageuc_developer_bar_panel_content">
+        <h2>Configuration</h2>
+        <div class="mageuc_developer_bar_panel_block">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>xebug</th>
+                        <td><?php if (extension_loaded('xdebug')) { echo 'ok';} else { echo 'no';} ?></td>
+                    </tr>
+                    <tr>
+                        <th>tokenizer</th>
+                        <td><?php if (function_exists('token_get_all')) { echo 'ok';} else { echo 'no';} ?></td>
+                    </tr>
+                    <tr>
+                        <th>eaccelerator</th>
+                        <td><?php if (extension_loaded('eaccelerator') && ini_get('eaccelerator.enable')) { echo 'ok';} else { echo 'no';} ?></td>
+                    </tr>
+                    <tr>
+                        <th>apc</th>
+                        <td><?php if (extension_loaded('apc') && ini_get('apc.enabled')) { echo 'ok';} else { echo 'no';} ?></td>
+                    </tr>
+                    <tr>
+                        <th>xcache</th>
+                        <td><?php if (extension_loaded('xcache') && ini_get('xcache.cacher')) { echo 'ok';} else { echo 'no';} ?></td>
+                    </tr>
+                    <?php foreach ($arPhpInfo as $key => $value) : ?>
+                    <tr>
+                        <th><?php echo $key; ?></th>
+                        <td>
+                        <?php if (is_array($value)) : ?>
+                            <ul>
+                                <?php foreach ($value as $key => $value) : ?>
+                                <li><?php echo $value; ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php else : ?>
+                            <?php echo $value; ?>
+                        <?php endif; ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
