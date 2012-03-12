@@ -1,0 +1,35 @@
+<?php
+/**
+ * @category   MageUC
+ * @package    Developer
+ * @author     Nicolas Bastien
+ */
+?>
+<div id="mageuc-developer-bar-event" class="mageuc_developer_bar_panel" style="display: none;">
+    <div class="mageuc_developer_bar_panel_content">
+        <h2>Event &nbsp;>&nbsp; <strong><?php echo $this->getTotalEvents(); ?></strong></h2>
+
+        <div class="mageuc_developer_bar_panel_block">
+            <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Name</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $key = 0; ?>
+                    <?php foreach ($this->getEvents() as $eventName => $count) : ?>
+                        <tr>
+                            <td><?php echo $key; ?></td>
+                            <td><?php echo $eventName; ?></td>
+                            <td><?php echo $count; ?></td>
+                        </tr>
+                        <?php $key++; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<?php
+/**
+ * @category   MageUC
+ * @package    Developer
+ * @author     Nicolas Bastien
+ */
+?>
+<div id="mageuc-developer-bar-database_warning" class="mageuc_developer_bar_panel" style="display: none;">
+    <div class="mageuc_developer_bar_panel_content">
+        <h2>Database Warnings&nbsp;>&nbsp; <strong><?php echo $this->getPanelTitle(); ?></strong> duplicated queries</h2>
+
+        <div class="mageuc_developer_bar_panel_block">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Calls</th>
+                        <th>Query</th>
+                        <th>Params</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->getDuplicatedQueries() as $arQuery) : ?>
+                    <tr>
+                        <td><?php echo count($arQuery); ?>
+                        <td><?php echo $this->_formatQuery($arQuery[0]['query']); ?></td>
+                        <td>
+                            <pre>
+<?php
+                                $params = $arQuery[0]['params'];
+                                if (!empty($params)) {
+                                    var_export($params);
+                                }
+?>
+                            </pre>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

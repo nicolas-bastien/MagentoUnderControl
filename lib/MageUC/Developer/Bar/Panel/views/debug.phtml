@@ -1,0 +1,30 @@
+<?php
+/**
+ * @category   MageUC
+ * @package    Developer
+ * @author     Nicolas Bastien
+ */
+?>
+<div id="mageuc-developer-bar-debug" class="mageuc_developer_bar_panel" style="display: none;">
+    <div class="mageuc_developer_bar_panel_content">
+        <h2>Debug</h2>
+        <div class="mageuc_developer_bar_panel_block">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Dump</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->getData() as $varName => $var) : ?>
+                    <tr>
+                        <th><?php echo $varName; ?></th>
+                        <td><code><?php $this->varDump($var); ?></code></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

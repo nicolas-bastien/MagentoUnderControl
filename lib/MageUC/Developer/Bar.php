@@ -35,8 +35,13 @@ class MageUC_Developer_Bar
         //Load Bar panel
         $this->_panels = array(
             'application' => new MageUC_Developer_Bar_Panel_Application(),
-            'memory'  => new MageUC_Developer_Bar_Panel_Memory(),
-            'setting' => new MageUC_Developer_Bar_Panel_Settings()
+            'database' => new MageUC_Developer_Bar_Panel_Database(),
+            'database_warning' => new MageUC_Developer_Bar_Panel_Database_Warning(),
+            'event'=> new MageUC_Developer_Bar_Panel_Event(),
+            'log'  => new MageUC_Developer_Bar_Panel_Log(),
+            'debug'=> new MageUC_Developer_Bar_Panel_Debug(),
+            'memory' => new MageUC_Developer_Bar_Panel_Memory(),
+            'setting'=> new MageUC_Developer_Bar_Panel_Settings()
         );
     }
 

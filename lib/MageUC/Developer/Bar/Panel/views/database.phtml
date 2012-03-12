@@ -1,0 +1,45 @@
+<?php
+/**
+ * @category   MageUC
+ * @package    Developer
+ * @author     Nicolas Bastien
+ */
+?>
+<div id="mageuc-developer-bar-database" class="mageuc_developer_bar_panel" style="display: none;">
+    <div class="mageuc_developer_bar_panel_content">
+        <h2>Database &nbsp;>&nbsp; <strong><?php echo $this->getTotalQuery(); ?></strong> queries in <?php echo sprintf("%f", $this->getTotalTime()); ?> seconds</h2>
+
+        <div class="mageuc_developer_bar_panel_block">
+            <table>
+                <thead>
+                    <tr>
+                        <th>nb</th>
+                        <th>Time</th>
+                        <th>Query</th>
+                        <th>Params</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->getQueries() as $key => $query) : ?>
+                    <tr>
+                        <td><?php echo $key; ?></td>
+                        <td><?php echo sprintf("%f", $query->getElapsedSecs()); ?>
+                        <td><?php echo $this->_formatQuery($query->getQuery()); ?></td>
+                        <td>
+                            <pre>
+<?php
+                                $params = $query->getQueryParams();
+                                if (!empty($params)) {
+                                    var_export($params, true);
+                                }
+?>
+                            </pre>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <h3><?php echo "Total time: " . sprintf("%f", $this->getTotalTime()); ?> seconds</h3>
+        </div>
+    </div>
+</div>
