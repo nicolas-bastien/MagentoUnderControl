@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+/**
+ * MageUC console script
+ * @author Nicolas Bastien
+ */
+if (version_compare(phpversion(), '5.2.0', '<') === true) {
+    echo 'Whoops, it looks like you have an invalid PHP version. Magento supports PHP 5.2.0 or newer.';
+    exit;
+}
+
+/**
+ * Error reporting
+ */
+error_reporting(E_ALL | E_STRICT);
+
+//Initialise default application, allow us to use all basic Mage functions
+//and to have autoload
+require_once '.' . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Mage.php';
+Mage::app('default');
+
+$console = new MageUC_Console();
+$console->run($_SERVER['argv']);
