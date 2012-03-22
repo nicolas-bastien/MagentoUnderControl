@@ -170,4 +170,32 @@ abstract class MageUC_Console_Task
     {
         return '@todo';
     }
+
+    /**
+     * Return path to folder to check
+     *
+     * @param string $toCheck command line params
+     * @return void
+     */
+    protected function _getFilesToCheck($toCheck)
+    {
+        switch($toCheck) {
+            case 'all':
+                //Check all modules and libraries
+                return array(Mage::getBaseDir('lib') . DS . 'MageUC', Mage::getBaseDir('app') . DS . 'code' . DS . 'local');
+            case 'lib':
+                //Check all libraries : add an array is you have more than one
+                return Mage::getBaseDir('lib') . DS . 'MageUC';
+            case 'module':
+                //Check all local modules
+                return Mage::getBaseDir('app') . DS . 'code' . DS . 'local';
+            default:
+                if (strpos($toCheck, '#') === 0) {
+                    //Case of a specific file, just prefix the path by #
+                    return $toCheck;
+                }
+                //Check a specific module package
+                return Mage::getBaseDir('app') . DS . 'code' . DS . 'local' . DS . str_replace('_', DS, $toCheck);
+        }
+    }
 }

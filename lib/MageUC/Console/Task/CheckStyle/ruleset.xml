@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PHP_CodeSniffer Configuration File
+ * Based on Zend Framework coding standard allow use to easily tune for Magento projects
+ * @author: Nicolas Bastien
+ */
+--> 
+<ruleset name="MageUC">
+    <description>A coding standard based on Zend Framework coding standard.</description>
+
+    <!-- Include some sniffs from all around the place -->
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+    <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+    <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+    <rule ref="Generic.PHP.ForbiddenFunctions"/>
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+<!--    <rule ref="Generic.PHP.NoSilencedErrors"/>-->
+
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+    <rule ref="Generic.Commenting.Todo"/>
+    <rule ref="Generic.NamingConventions.ConstructorName"/>
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+    <!-- Lines can be 150 chars long, show errors at 150 chars -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="150"/>
+            <property name="absoluteLineLimit" value="150"/>
+        </properties>
+    </rule>
+
+    <rule ref="PEAR.Classes.ClassDeclaration"/>
+    <rule ref="PEAR.ControlStructures.ControlSignature"/>
+<!--    <rule ref="PEAR.Functions.FunctionCallSignature"/>-->
+    <rule ref="PEAR.Functions.ValidDefaultValue"/>
+    <rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
+    <rule ref="PEAR.ControlStructures.MultiLineCondition"/>
+    
+    <rule ref="Squiz.Functions.GlobalFunction"/>
+    <rule ref="Squiz.Classes.LowercaseClassKeywords"/>
+    
+    <rule ref="Squiz.Commenting.EmptyCatchComment"/>
+    <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops"/>
+    <rule ref="Squiz.PHP.GlobalKeyword"/>
+    <rule ref="Squiz.PHP.NonExecutableCode"/>
+
+    <rule ref="MySource.Channels.DisallowSelfActions"/>
+    <rule ref="MySource.PHP.EvalObjectFactory"/>
+
+
+    <!-- Use Unix newlines -->
+<!--    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>-->
+ 
+    <rule ref="Zend.Files.ClosingTag"/>
+    <rule ref="Zend.NamingConventions.ValidVariableName"/>
+    <rule ref="Zend.Debug.CodeAnalyzer"/>
+
+</ruleset>

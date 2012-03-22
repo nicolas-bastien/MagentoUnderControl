@@ -17,6 +17,10 @@ class MageUC_Console
      */
     private $_tasks = array(
         'cc'   => 'MageUC_Console_Task_ClearCache',
+        'test' => 'MageUC_Console_Task_PHPUnit',
+        'cs'   => 'MageUC_Console_Task_CheckStyle',
+        'pmd'  => 'MageUC_Console_Task_PHPMD',
+        'pdepend'=>'MageUC_Console_Task_PHPDepend'
     );
 
     /**
