@@ -35,7 +35,7 @@ class MageUC_Console_Task_PHPUnit extends MageUC_Console_Task
      */
     public function validate ()
     {
-        if (!@include_once('PHPUnit/Framework.php')) {
+        if (!@include_once('PHPUnit/Autoload.php')) {
             throw new MageUC_Console_Exception('PHPUnit is required.');
         }
         return parent::validate();
