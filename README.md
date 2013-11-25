@@ -33,3 +33,7 @@ Add mageuc and mageuc.bat for Windows user
 
 
 ... and more comming...
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nicolas-bastien/magentoundercontrol/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
